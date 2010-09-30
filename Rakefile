@@ -53,12 +53,16 @@ end
 
 desc 'Run core_tests tests for IE'
 task :core_tests do
-  Dir.chdir("watir") {system "call rake.bat test"}
+  Dir.chdir("watir") do
+    launch_subrake "test"
+  end
 end
 
 desc 'Run mozilla_all_tests for FireFox'
 task :mozilla_all_tests do
-  Dir.chdir("firewatir") {system "call rake.bat test"}
+  Dir.chdir("firewatir") do
+    launch_subrake "test"
+  end
 end
 
 #
